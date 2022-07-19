@@ -1,0 +1,73 @@
+.search button {
+    border: none;
+    border-radius: 15px;
+    background: rgb(248, 248, 248);
+    color: rgb(126, 101, 101);
+    transition: 0.15s;
+}
+.search button:hover {
+    background: rgb(126, 101, 101);
+    color: rgb(248, 248, 248);
+}
+.headline {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;  /*가로 가운데 정렬*/
+}
+.headline img {
+    width: 400px;
+}
+.menu {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /*알아서 wrapping 하는 코드 (삐져나가는 공간 없이 알아서 다음 줄로 디스플레이)*/
+    border-top: 2px solid #ebebeb;
+    border-bottom: 4px double gray;
+}
+.menu button {
+    border: none;
+    margin: 5px;
+    background: none;
+    transition: 0.2s;
+}
+.menu button:hover {
+    background-color: rgb(236, 236, 218);
+}
+
+.news-img {
+    max-width: 100%;  /*부모의 100%를 할당*/
+    max-height: 250px;
+}
+.news {
+    padding-top: 2em;
+    border-bottom: 2px solid gray;
+    padding-bottom: 1em;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.pagination a {
+    width: 40px;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    font-weight: 600;
+}
+.page-link {
+    background: rgb(248, 248, 248);
+    color: rgb(126, 101, 101);
+}
+.page-link:hover {
+    background: rgb(126, 101, 101);
+    color: rgb(248, 248, 248);
+}
+.page-item.active .page-link {
+    background: rgb(126, 101, 101);
+    color: rgb(248, 248, 248);
+    border-color: rgb(126, 101, 101);
+}
