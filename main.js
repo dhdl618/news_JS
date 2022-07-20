@@ -72,7 +72,8 @@ const getLatestNews = async() => {
 const getNewsByTopic = async(e) => {
     let topic = e.target.textContent.toLowerCase();
     url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=${topic}&page_size=5`)
-    
+    page = 1    // page를 1로 초기화 해줌으로써, 다른 카테고리를 클릭할 때 1페이지로 이동
+
     getNews()
 }
 
@@ -83,7 +84,8 @@ let news = []
 const getNewsByKeyword = async() => {
     let keyword = document.getElementById("search-input").value
     url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=5`)
-    
+    page = 1
+
     getNews()
 }
 
@@ -218,5 +220,37 @@ const movePage = (pageNum) => {
 
     getNews()
 }
+
+let concealButton = document.getElementById("conceal-input")
+let input = document.getElementById("search-input")
+let concealInput = true
+
+// 초기화
+input.style.display = "none"
+searchButton.style.display = "none"
+input.addEventListener("focus", () => {
+  input.value = ""
+})
+
+const revealAndConcealButton = () => {
+
+  switch (concealInput) {
+    case true:
+      input.style.display = ""
+      searchButton.style.display = ""
+      concealInput = false
+      break
+      
+    case false:
+      input.style.display = "none"
+      searchButton.style.display = "none"
+      concealInput = true
+      break
+  }
+  console.log(concealInput)
+}
+
+concealButton.addEventListener("click", revealAndConcealButton)
+
 
 getLatestNews()

@@ -1,3 +1,23 @@
+input:focus {
+    outline: none;
+}
+#search-input {
+    border: none;
+    background: rgb(248, 248, 248);
+    color: rgb(126, 101, 101);
+    font-weight: 600;
+    font-size: 13px;
+    padding-left: 5px;
+}
+#search-input::placeholder {
+    color:rgb(126, 101, 101);
+    font-weight: 600;
+    font-size: 13px;
+    opacity: 0.7;
+}
+.search {
+    margin-top: 10px;
+}
 .search button {
     border: none;
     border-radius: 15px;
